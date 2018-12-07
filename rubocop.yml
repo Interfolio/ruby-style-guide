@@ -7,7 +7,12 @@ AllCops:
     - .git/**/*
     - Rakefile
     - db/migrate/*
+    - spec/spec_helper.rb
+    - spec/rails_helper.rb
   StyleGuideBaseURL: https://github.com/Interfolio/ruby-style-guide
+
+Rails:
+  Enabled: true
 
 #################
 #   Overrides   #
@@ -17,6 +22,23 @@ AllCops:
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_layout.md#layoutendofline
 Layout/EndOfLine:
   EnforcedStyle: lf
+
+# Allow less whitespace in indentation
+# https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_layout.md#layoutalignparameters
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+# Don't require empty lines between module and class lines
+# https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_layout.md#layoutemptylinesaroundclassbody
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines_except_namespace
+
+# Don't require empty lines between module and class lines
+# https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_layout.md#layoutemptylinesaroundmodulebody
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: empty_lines_except_namespace
+  Exclude:
+    - "lib/swagger_responses.rb"
 
 # Allow multi-line methods to be indented instead of aligned
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_layout.md#layoutmultilinemethodcallindentation
@@ -34,6 +56,12 @@ Metrics/BlockLength:
 Metrics/LineLength:
   Max: 120
 
+# Allow swagger response documentation blocks to be lengthy
+# https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_metrics.md#metricsmethodlength
+Metrics/MethodLength:
+  Exclude:
+    - "lib/swagger_responses.rb"
+
 # Allows { { } } in specs
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#styleblockdelimiters
 Style/BlockDelimiters:
@@ -44,6 +72,8 @@ Style/BlockDelimiters:
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#styleclassandmodulechildren
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
+  Exclude:
+    - "config/application.rb"
 
 # Prefer compact style over exploded.
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#styleraiseargs
@@ -82,4 +112,9 @@ Style/DocumentationMethod:
 # Quieting noise for now
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#stylefrozenstringliteralcomment
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Don't require 1000000 to be typed 1_000_000
+# https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#stylenumericliterals
+Style/NumericLiterals:
   Enabled: false
