@@ -62,6 +62,12 @@ Metrics/MethodLength:
   Exclude:
     - "lib/swagger_responses.rb"
 
+# Exclude deploy configurations from requiring snake_case filenames.
+# https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_naming.md#namingfilename
+Naming/FileName:
+  Exclude:
+    - 'config/deploy/*.rb'
+
 # Allows { { } } in specs
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#styleblockdelimiters
 Style/BlockDelimiters:
