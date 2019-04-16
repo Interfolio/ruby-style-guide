@@ -74,13 +74,6 @@ Style/BlockDelimiters:
   Exclude:
     - 'spec/**/*'
 
-# Prevents noise from Abilities::SomeClass complaints
-# https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#styleclassandmodulechildren
-Style/ClassAndModuleChildren:
-  EnforcedStyle: compact
-  Exclude:
-    - "config/application.rb"
-
 # Prefer compact style over exploded.
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#styleraiseargs
 Style/RaiseArgs:
