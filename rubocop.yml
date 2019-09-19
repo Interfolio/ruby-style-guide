@@ -118,3 +118,6 @@ Style/FrozenStringLiteralComment:
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#stylenumericliterals
 Style/NumericLiterals:
   Enabled: false
+
+Rails/HttpPositionalArguments:
+  Enabled: false
