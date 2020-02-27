@@ -46,6 +46,13 @@ Layout/EmptyLinesAroundModuleBody:
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
+# This cop checks for ambiguous block association with method when param passed without parentheses
+# However, the style of ambiguous block is standard in specs
+# https://github.com/rubocop-hq/rubocop/issues/4222
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
+
 # Allows lengthy describes in specs
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_metrics.md#metricsblocklength
 Metrics/BlockLength:
