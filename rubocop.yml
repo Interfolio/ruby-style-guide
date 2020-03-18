@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - bin/**/*
+    - config/environments/*
     - config/deploy/*
     - db/schema.rb
     - node_modules/**/*
@@ -94,8 +95,8 @@ Layout/EndOfLine:
   EnforcedStyle: lf
 
 # Allow less whitespace in indentation
-# https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_layout.md#layoutalignparameters
-Layout/AlignParameters:
+# https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_layout.md#layoutparameteralignment
+Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
 # Don't require empty lines between module and class lines
@@ -125,6 +126,7 @@ Lint/AmbiguousBlockAssociation:
 # Allows lengthy describes in specs
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_metrics.md#metricsblocklength
 Metrics/BlockLength:
+  ExcludedMethods: ["included"]
   Exclude:
     - 'spec/**/*'
 
@@ -163,6 +165,21 @@ Rails/UnknownEnv:
 Style/BlockDelimiters:
   Exclude:
     - 'spec/**/*'
+
+# This cop checks for uses of each_key and each_value Hash methods
+# https://rubocop.readthedocs.io/en/latest/cops_style/#stylehasheachmethods
+Style/HashEachMethods:
+  Enabled: true
+
+# transforming the keys of a hash - Ruby 2.5 and newer
+# https://rubocop.readthedocs.io/en/latest/cops_style/#stylehashtransformkeys
+Style/HashTransformKeys:
+  Enabled: true
+
+# transforming the values of a hash - Ruby 2.4 and newer
+# https://rubocop.readthedocs.io/en/latest/cops_style/#stylehashtransformvalues
+Style/HashTransformValues:
+  Enabled: true
 
 # Prefer compact style over exploded.
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#styleraiseargs
