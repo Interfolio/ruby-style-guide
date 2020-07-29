@@ -76,6 +76,19 @@ Naming/FileName:
   Exclude:
     - 'config/deploy/*.rb'
 
+# Allows the available environments to pass the Rails.env.{environment}? check
+# https://docs.rubocop.org/rubocop-rails/cops_rails.html#railsunknownenv
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - nonprod
+    - development
+    - test
+    - qa
+    - alpha
+    - sandbox
+    - beta
+
 # Allows { { } } in specs
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#styleblockdelimiters
 Style/BlockDelimiters:
