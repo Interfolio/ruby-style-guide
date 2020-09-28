@@ -76,8 +76,8 @@ Layout/ClassStructure:
     - validations
     - delegations
     - scopes
-    - initializer
     - public_class_methods
+    - initializer
     - concerning_blocks
     - public_methods
     - predicates

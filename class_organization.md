@@ -60,9 +60,9 @@ class MyNamespace::MyClass < MyNamespace::MyBaseClass  # Class definition with f
 
   scope :my_scope, → { }          # Scopes
 
-  def initialize...                 # Initialize Method
-
   def self.my_class_method...         # Class Methods
+
+  def initialize...                 # Initialize Method
 
   concerning :<SomeConcern>s do
     # ...
