@@ -16,7 +16,7 @@ Rails:
   Enabled: true
 
 Layout/ClassStructure:
-  Enabled: true
+  Enabled: false
   Categories:
     module_inclusion:
       - extend
