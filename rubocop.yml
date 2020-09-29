@@ -15,6 +15,75 @@ AllCops:
 Rails:
   Enabled: true
 
+Layout/ClassStructure:
+  Enabled: true
+  Categories:
+    module_inclusion:
+      - extend
+      - include
+      - prepend
+    callbacks:
+      - before_validation
+      - after_validation
+      - before_save
+      - around_save
+      - before_create
+      - around_create
+      - after_create
+      - before_update
+      - around_update
+      - after_update
+      - after_save
+      - before_destroy
+      - around_destroy
+      - after_destroy
+      - after_commit
+      - after_rollback
+      - after_initialize
+      - after_find
+    mounted_uploaders:
+      - mount_uploader
+    attributes:
+      - attr_accessor
+      - attr_reader
+      - attr_writer
+      - serialize
+    associations:
+      - belongs_to
+      - has_one
+      - has_many
+      - has_and_belongs_to_many
+      - accepts_nested_attributes_for
+    validations:
+      - validation_flag
+      - validates
+      - validates_associated
+      - validates_with
+      - validates_each
+    delegations:
+      - delegate
+    scopes:
+      - scope
+    concerning_blocks:
+      - concerning
+  ExpectedOrder:
+    # - constants
+    - module_inclusion
+    - callbacks
+    - mounted_uploaders
+    - attributes
+    - associations
+    - validations
+    - delegations
+    - scopes
+    - public_class_methods
+    - initializer
+    - concerning_blocks
+    - public_methods
+    - predicates
+    - protected_methods
+    - private_methods
+
 #################
 #   Overrides   #
 #################
