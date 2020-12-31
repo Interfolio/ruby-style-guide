@@ -40,7 +40,7 @@ Rails/ActiveRecordAliases:
 Rails/ActiveRecordCallbacksOrder:
   Description: 'Order callback declarations in the order in which they will be executed.'
   StyleGuide: 'https://rails.rubystyle.guide/#callbacks-order'
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.7'
   Include:
     - app/models/**/*.rb
@@ -67,7 +67,7 @@ Rails/AfterCommitOverride:
     This cop enforces that there is only one call to `after_commit`
     (and its aliases - `after_create_commit`, `after_update_commit`,
     and `after_destroy_commit`) with the same callback name per model.
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.8'
 
 Rails/ApplicationController:
@@ -113,7 +113,7 @@ Rails/AssertNot:
 
 Rails/AttributeDefaultBlockValue:
   Description: 'Pass method call in block for attribute option `default`.'
-  Enabled: pending
+  Enabled: true
   VersionAdded: '2.9'
   Include:
     - 'models/**/*'
@@ -274,7 +274,7 @@ Rails/FindById:
     Favor the use of `find` over `where.take!`, `find_by!`, and `find_by_id!` when you
     need to retrieve a single record by primary key when you expect it to be found.
   StyleGuide: 'https://rails.rubystyle.guide/#find'
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.7'
 
 Rails/FindEach:
@@ -355,7 +355,7 @@ Rails/IndexWith:
 Rails/Inquiry:
   Description: "Prefer Ruby's comparison operators over Active Support's `Array#inquiry` and `String#inquiry`."
   StyleGuide: 'https://rails.rubystyle.guide/#inquiry'
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.7'
 
 Rails/InverseOf:
@@ -386,7 +386,7 @@ Rails/LinkToBlank:
 Rails/MailerName:
   Description: 'Mailer should end with `Mailer` suffix.'
   StyleGuide: 'https://rails.rubystyle.guide/#mailer-name'
-  Enabled: 'pending'
+  Enabled: false
   SafeAutoCorrect: false
   VersionAdded: '2.7'
   Include:
@@ -397,7 +397,7 @@ Rails/MatchRoute:
     Don't use `match` to define any routes unless there is a need to map multiple request types
     among [:get, :post, :patch, :put, :delete] to a single action using the `:via` option.
   StyleGuide: 'https://rails.rubystyle.guide/#no-match-routes'
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.7'
   Include:
     - config/routes.rb
@@ -406,7 +406,7 @@ Rails/MatchRoute:
 Rails/NegateInclude:
   Description: 'Prefer `collection.exclude?(obj)` over `!collection.include?(obj)`.'
   StyleGuide: 'https://rails.rubystyle.guide#exclude'
-  Enabled: 'pending'
+  Enabled: true
   Safe: false
   VersionAdded: '2.7'
   VersionChanged: '2.9'
@@ -452,7 +452,7 @@ Rails/Pick:
 Rails/Pluck:
   Description: 'Prefer `pluck` over `map { ... }`.'
   StyleGuide: 'https://rails.rubystyle.guide#pluck'
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.7'
 
 Rails/PluckId:
@@ -464,7 +464,7 @@ Rails/PluckId:
 
 Rails/PluckInWhere:
   Description: 'Use `select` instead of `pluck` in `where` query methods.'
-  Enabled: 'pending'
+  Enabled: true
   Safe: false
   VersionAdded: '2.7'
   VersionChanged: '2.8'
@@ -563,13 +563,13 @@ Rails/RelativeDateConstant:
 Rails/RenderInline:
   Description: 'Prefer using a template over inline rendering.'
   StyleGuide: 'https://rails.rubystyle.guide/#inline-rendering'
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.7'
 
 Rails/RenderPlainText:
   Description: 'Prefer `render plain:` over `render text:`.'
   StyleGuide: 'https://rails.rubystyle.guide/#plain-text-rendering'
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.7'
   # Convert only when `content_type` is explicitly set to `text/plain`.
   ContentTypeCompatibility: true
@@ -634,7 +634,7 @@ Rails/ScopeArgs:
 Rails/ShortI18n:
   Description: 'Use the short form of the I18n methods: `t` instead of `translate` and `l` instead of `localize`.'
   StyleGuide: 'https://rails.rubystyle.guide/#short-i18n'
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.7'
   EnforcedStyle: conservative
   SupportedStyles:
@@ -673,7 +673,7 @@ Rails/SkipsModelValidations:
 Rails/SquishedSQLHeredocs:
   Description: 'Checks SQL heredocs to use `.squish`.'
   StyleGuide: 'https://rails.rubystyle.guide/#squished-heredocs'
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.8'
   VersionChanged: '2.9'
   # Some SQL syntax (e.g. PostgreSQL comments and functions) requires newlines
@@ -739,12 +739,12 @@ Rails/Validation:
 Rails/WhereEquals:
   Description: 'Pass conditions to `where` as a hash instead of manually constructing SQL.'
   StyleGuide: 'https://rails.rubystyle.guide/#hash-conditions'
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.9'
 
 Rails/WhereExists:
   Description: 'Prefer `exists?(...)` over `where(...).exists?`.'
-  Enabled: 'pending'
+  Enabled: true
   EnforcedStyle: exists
   SupportedStyles:
     - exists
@@ -755,7 +755,7 @@ Rails/WhereExists:
 Rails/WhereNot:
   Description: 'Use `where.not(...)` instead of manually constructing negated SQL in `where`.'
   StyleGuide: 'https://rails.rubystyle.guide/#hash-conditions'
-  Enabled: 'pending'
+  Enabled: true
   VersionAdded: '2.8'
 
 # Accept `redirect_to(...) and return` and similar cases.
