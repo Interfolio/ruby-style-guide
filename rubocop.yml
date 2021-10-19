@@ -1259,7 +1259,6 @@ Layout/SpaceBeforeBrackets:
   StyleGuide: '#space-in-brackets-access'
   Enabled: true
   VersionAdded: '1.7'
-  Safe: false
 
 Layout/SpaceBeforeComma:
   Description: 'No spaces before commas.'
@@ -1477,7 +1476,6 @@ Lint/BinaryOperatorWithIdenticalOperands:
 Lint/BooleanSymbol:
   Description: 'Check for `:true` and `:false` symbols.'
   Enabled: true
-  Safe: false
   VersionAdded: '0.50'
   VersionChanged: '0.83'
 
@@ -1511,10 +1509,6 @@ Lint/Debugger:
   Enabled: true
   VersionAdded: '0.14'
   VersionChanged: '0.49'
-  DebuggerReceivers:
-    - binding
-    - Kernel
-    - Pry
   DebuggerMethods:
     - debugger
     - byebug
@@ -1790,7 +1784,6 @@ Lint/MultipleComparison:
   Enabled: true
   VersionAdded: '0.47'
   VersionChanged: '1.1'
-  AllowMethodComparison: true
 
 Lint/NestedMethodDefinition:
   Description: 'Do not use nested method definitions.'
@@ -2057,12 +2050,6 @@ Lint/SuppressedException:
   AllowComments: true
   VersionAdded: '0.9'
   VersionChanged: '0.81'
-
-Lint/Syntax:
-  Description: 'Checks syntax error.'
-  Enabled: true
-  VersionAdded: '0.9'
-
 
 Lint/ToEnumArguments:
   Description: 'This cop ensures that `to_enum`/`enum_for`, called for the current method, has correct arguments.'
@@ -3288,8 +3275,6 @@ Style/ExplicitBlockArgument:
     that just passes its arguments to another block.
   StyleGuide: '#block-argument'
   Enabled: true
-  # May change the yielding arity.
-  Safe: false
   VersionAdded: '0.89'
 
 Style/ExponentialNotation:
