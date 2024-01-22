@@ -1,3 +1,5 @@
+require: rubocop-rails
+
 AllCops:
   Exclude:
     - bin/**/*
@@ -95,7 +97,7 @@ Layout/EndOfLine:
 
 # Allow less whitespace in indentation
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_layout.md#layoutalignparameters
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
 # Don't require empty lines between module and class lines
@@ -184,6 +186,14 @@ Style/SymbolArray:
 Style/WordArray:
   EnforcedStyle: brackets
 
+# Don't enforce the ugly hash syntax from Ruby 3.1
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+
+# Unnecessary change
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
 #################
 # Disabled cops #
 #################
@@ -206,4 +216,8 @@ Style/FrozenStringLiteralComment:
 # Don't require 1000000 to be typed 1_000_000
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_style.md#stylenumericliterals
 Style/NumericLiterals:
+  Enabled: false
+
+# Don't need to remove the extra escapes
+Style/RedundantRegexpEscape:
   Enabled: false
