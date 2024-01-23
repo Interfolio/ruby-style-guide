@@ -113,6 +113,11 @@ Layout/EmptyLinesAroundModuleBody:
   Exclude:
     - "lib/swagger_responses.rb"
 
+# Noise from longer lines
+# https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_metrics.md#metricslinelength
+Layout/LineLength:
+  Max: 120
+
 # Allow multi-line methods to be indented instead of aligned
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_layout.md#layoutmultilinemethodcallindentation
 Layout/MultilineMethodCallIndentation:
@@ -130,11 +135,6 @@ Lint/AmbiguousBlockAssociation:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
-
-# Noise from longer lines
-# https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_metrics.md#metricslinelength
-Metrics/LineLength:
-  Max: 120
 
 # Allow swagger response documentation blocks to be lengthy
 # https://github.com/rubocop-hq/rubocop/blob/master/manual/cops_metrics.md#metricsmethodlength
