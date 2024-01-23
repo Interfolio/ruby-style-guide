@@ -13,6 +13,7 @@ AllCops:
     - spec/spec_helper.rb
     - spec/rails_helper.rb
   StyleGuideBaseURL: https://github.com/Interfolio/ruby-style-guide
+  NewCops: disable
 
 Rails:
   Enabled: true
