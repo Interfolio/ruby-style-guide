@@ -1832,7 +1832,7 @@ Lint/NumberConversion:
   VersionAdded: '0.53'
   VersionChanged: '1.1'
   SafeAutoCorrect: false
-  IgnoredMethods: []
+  AllowedMethods: []
   IgnoredClasses:
     - Time
     - DateTime
@@ -2128,7 +2128,7 @@ Lint/UnreachableLoop:
   Enabled: true
   VersionAdded: '0.89'
   VersionChanged: '1.7'
-  IgnoredPatterns:
+  AllowedPatterns:
     # RSpec uses `times` in its message expectations
     # eg. `exactly(2).times`
     - !ruby/regexp /(exactly|at_least|at_most)\(\d+\)\.times/
@@ -2228,7 +2228,7 @@ Metrics/AbcSize:
   VersionChanged: '1.5'
   # The ABC size is a calculated magnitude, so this number can be an Integer or
   # a Float.
-  IgnoredMethods: []
+  AllowedMethods: []
   CountRepeatedAttributes: true
   Max: 17
 
@@ -2240,7 +2240,7 @@ Metrics/BlockLength:
   CountComments: false  # count full line comments?
   Max: 25
   CountAsOne: []
-  IgnoredMethods:
+  AllowedMethods:
     # By default, exclude the `#refine` method, as it tends to have larger
     # associated blocks.
     - refine
@@ -2274,7 +2274,7 @@ Metrics/CyclomaticComplexity:
   Enabled: true
   VersionAdded: '0.25'
   VersionChanged: '0.81'
-  IgnoredMethods: []
+  AllowedMethods: []
   Max: 7
 
 Metrics/MethodLength:
@@ -2286,7 +2286,7 @@ Metrics/MethodLength:
   CountComments: false  # count full line comments?
   Max: 10
   CountAsOne: []
-  IgnoredMethods: []
+  AllowedMethods: []
   Exclude:
     - "lib/swagger_responses.rb"
 
@@ -2316,7 +2316,7 @@ Metrics/PerceivedComplexity:
   Enabled: true
   VersionAdded: '0.25'
   VersionChanged: '0.81'
-  IgnoredMethods: []
+  AllowedMethods: []
   Max: 8
 
 ################## Migration #############################
@@ -2498,7 +2498,7 @@ Naming/MethodName:
   #     - '\A\s*onSelectionBulkChange\s*'
   #     - '\A\s*onSelectionCleared\s*'
   #
-  IgnoredPatterns: []
+  AllowedPatterns: []
 
 Naming/MethodParameterName:
   Description: >-
@@ -2817,7 +2817,7 @@ Style/BlockDelimiters:
     - let!
     - subject
     - watch
-  IgnoredMethods:
+  AllowedMethods:
     # Methods that can be either procedural or functional and cannot be
     # categorised from their usage alone, e.g.
     #
@@ -2857,7 +2857,7 @@ Style/BlockDelimiters:
   #   collection.each do |element| puts element end
   AllowBracesOnProceduralOneLiners: false
   # The BracesRequiredMethods overrides all other configurations except
-  # IgnoredMethods. It can be used to enforce that all blocks for specific
+  # AllowedMethods. It can be used to enforce that all blocks for specific
   # methods use braces. For example, you can use this to enforce Sorbet
   # signatures use braces even when the rest of your codebase enforces
   # the `line_count_based` style.
@@ -2939,7 +2939,7 @@ Style/ClassEqualityComparison:
   StyleGuide: '#instance-of-vs-class-comparison'
   Enabled: true
   VersionAdded: '0.93'
-  IgnoredMethods:
+  AllowedMethods:
     - ==
     - equal?
     - eql?
@@ -3621,8 +3621,8 @@ Style/MethodCallWithArgsParentheses:
   VersionAdded: '0.47'
   VersionChanged: '1.7'
   IgnoreMacros: true
-  IgnoredMethods: []
-  IgnoredPatterns: []
+  AllowedMethods: []
+  AllowedPatterns: []
   IncludedMacros: []
   AllowParenthesesInMultilineCall: false
   AllowParenthesesInChaining: false
@@ -3636,7 +3636,7 @@ Style/MethodCallWithoutArgsParentheses:
   Description: 'Do not use parentheses for method calls with no arguments.'
   StyleGuide: '#method-invocation-parens'
   Enabled: true
-  IgnoredMethods: []
+  AllowedMethods: []
   VersionAdded: '0.47'
   VersionChanged: '0.55'
 
@@ -3976,7 +3976,7 @@ Style/NumericPredicate:
   SupportedStyles:
     - predicate
     - comparison
-  IgnoredMethods: []
+  AllowedMethods: []
   # Exclude RSpec specs because assertions like `expect(1).to be > 0` cause
   # false positives.
   Exclude:
@@ -4544,7 +4544,7 @@ Style/SymbolProc:
   VersionChanged: '1.5'
   # A list of method names to be ignored by the check.
   # The names should be fairly unique, otherwise you'll end up ignoring lots of code.
-  IgnoredMethods:
+  AllowedMethods:
     - respond_to
     - define_method
 
