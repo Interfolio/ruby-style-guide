@@ -1263,7 +1263,6 @@ Layout/SpaceBeforeBrackets:
   StyleGuide: '#space-in-brackets-access'
   Enabled: true
   VersionAdded: '1.7'
-  Safe: false
 
 Layout/SpaceBeforeComma:
   Description: 'No spaces before commas.'
@@ -1481,7 +1480,6 @@ Lint/BinaryOperatorWithIdenticalOperands:
 Lint/BooleanSymbol:
   Description: 'Check for `:true` and `:false` symbols.'
   Enabled: true
-  Safe: false
   VersionAdded: '0.50'
   VersionChanged: '0.83'
 
@@ -1734,7 +1732,6 @@ Lint/InheritException:
 Lint/InterpolationCheck:
   Description: 'Raise warning for interpolation in single q strs.'
   Enabled: true
-  Safe: false
   VersionAdded: '0.50'
   VersionChanged: '0.87'
 
@@ -1790,7 +1787,6 @@ Lint/MultipleComparison:
   Enabled: true
   VersionAdded: '0.47'
   VersionChanged: '1.1'
-  AllowMethodComparison: true
 
 Lint/NestedMethodDefinition:
   Description: 'Do not use nested method definitions.'
@@ -2191,13 +2187,10 @@ Lint/UselessMethodDefinition:
   Description: 'Checks for useless method definitions.'
   Enabled: true
   VersionAdded: '0.90'
-  Safe: false
-  AllowComments: true
 
 Lint/UselessSetterCall:
   Description: 'Checks for useless setter call to a local variable.'
   Enabled: true
-  SafeAutoCorrect: false
   VersionAdded: '0.13'
   VersionChanged: '1.2'
   Safe: false
@@ -2851,7 +2844,7 @@ Style/BlockDelimiters:
   # then one-line procedural blocks may use either style.
   #
   #   # good
-  #   collection.each { |element| puts element }
+  #   collection.each { |element|q puts element }
   #
   #   # also good
   #   collection.each do |element| puts element end
@@ -3283,7 +3276,6 @@ Style/ExplicitBlockArgument:
   StyleGuide: '#block-argument'
   Enabled: true
   # May change the yielding arity.
-  Safe: false
   VersionAdded: '0.89'
 
 Style/ExponentialNotation:
@@ -3968,7 +3960,6 @@ Style/NumericPredicate:
   # This will change to a new method call which isn't guaranteed to be on the
   # object. Switching these methods has to be done with knowledge of the types
   # of the variables which rubocop doesn't have.
-  SafeAutoCorrect: false
   Enabled: true
   VersionAdded: '0.42'
   VersionChanged: '0.59'
