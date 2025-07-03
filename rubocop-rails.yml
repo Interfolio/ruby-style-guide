@@ -592,7 +592,7 @@ Rails/ReversibleMigration:
   Include:
     - db/migrate/*.rb
 
-Style/SafeNavigation:
+Rails/SafeNavigation:
   Description: "Use Ruby's safe navigation operator (`&.`) instead of `try!`."
   Enabled: true
   VersionAdded: '0.43'
