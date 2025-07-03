@@ -989,6 +989,7 @@ Style/ReturnNilInPredicateMethodDefinition: # new in 1.53
   Enabled: true
 Style/SafeNavigationChainLength: # new in 1.68
   Enabled: true
+  Max: 3
 Style/SelectByRegexp: # new in 1.22
   Enabled: true
 Style/SendWithLiteralMethodName: # new in 1.64
